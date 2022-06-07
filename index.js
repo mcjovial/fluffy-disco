@@ -55,9 +55,8 @@ const getQuote = async () => {
     }
 }
 
-const tweetQuote = async () => {
-    // post quote on twitter using the twitter post API
-    const twitterUrl = await `https://twitter.com/intent/tweet?text=${quoteText.innerText} ${quoteAuthor.innerText}`
+const tweetQuote = () => {
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.innerText} ${quoteAuthor.innerText}`
     window.open(twitterUrl, '_blank')
 }
 
