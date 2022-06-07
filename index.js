@@ -4,6 +4,9 @@ const quoteAuthor = document.getElementById('author')
 const twitterBtn = document.getElementById('twitter')
 const newQuoteBtn = document.getElementById('new-quote')
 
+
+let apiQuotes = []
+
 // Show Quote 
 const newQuote = () => {
     // generate a random number from the totaal length of the array
@@ -52,8 +55,15 @@ const getQuote = async () => {
     }
 }
 
+const tweetQuote = async () => {
+    // post quote on twitter using the twitter post API
+    const twitterUrl = await `https://twitter.com/intent/tweet?text=${quoteText.innerText} ${quoteAuthor.innerText}`
+    window.open(twitterUrl, '_blank')
+}
+
 // Event Listeners
 newQuoteBtn.addEventListener('click', newQuote)
+twitterBtn.addEventListener('click', tweetQuote)
 
 // fetch quotes from API when page renders
 getQuote()
