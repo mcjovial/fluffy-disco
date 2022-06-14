@@ -38,15 +38,15 @@ const newQuote = () => {
 }
 
 // Get Quote from API
-const getQuote = async () => {
+const getQuote = () => {
     const apiUrl = 'https://type.fit/api/quotes'
 
     try {
         // response from the quotes api   
-        const response = await fetch(apiUrl)
+        const response = fetch(apiUrl)
 
         // convert the response to JSON format to extract data (quotes)
-        apiQuotes = await response.json()
+        apiQuotes = response.json()
 
         // display a quote by default
         newQuote()
